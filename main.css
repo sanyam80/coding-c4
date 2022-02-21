@@ -1,0 +1,23 @@
+#container{
+            display:flex;
+           
+            
+
+}
+#sidebar{
+    flex:2;
+    
+}
+#main{
+    flex:8;
+    
+    display:grid;
+    grid-template-columns: repeat(4,220px);
+    grid-template-rows: repeat(5,200px);
+    grid-column-gap:30px;
+    grid-row-gap: 100px;
+}
+img{
+    width:220px;
+    height:170px;
+}

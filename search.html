@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+   
+    margin-left:100px;
+    display:grid;
+    grid-template-columns: repeat(4,250px);
+    grid-template-rows: repeat(5,200px);
+    grid-column-gap:30px;
+    grid-row-gap: 100px;
+}
+img{
+    width:250px;
+    height:170px;
+}
+    </style>
+</head>
+<body>
+    <div id = "main"></div>
+   
+    
+</body>
+</html>
+<script type = "module">
+    
+  import {makeApiCall, appendData} from "./scripts/main.js"
+var search_term = localStorage.getItem("searchTerm");
+var res = await makeApiCall(`https://shrouded-earth-23381.herokuapp.com/api/search/?q=${search_term}`);
+console.log("res:",res);
+var parent = document.getElementById("main");
+appendData(res,parent)
+</script>
+    
